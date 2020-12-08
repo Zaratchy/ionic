@@ -1,0 +1,23 @@
+.bg-img {
+  text-align: center;
+  padding: 1px;
+  height: 100%;
+  width: 100%;
+  background-color: #cfd9ee44;
+}
+
+.bg-img p,
+.bg-img h1 {
+  background-color: #cfd9ee;
+  margin: 0;
+  padding: 5px;
+}
+
+.add-button {
+  --background: #383a3e;
+  position: absolute;
+  bottom: 5px;
+  width: 96%;
+  --color: #ffffff;
+  margin-left: 2%;
+}
