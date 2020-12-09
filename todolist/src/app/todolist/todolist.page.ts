@@ -7,11 +7,15 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./todolist.page.scss'],
 })
 
+
+
+
 export class TodolistPage implements OnInit {
 
   
   currentDate: string;
-
+  
+  
 
   taskList = [];
   taskName = '';
@@ -20,9 +24,12 @@ export class TodolistPage implements OnInit {
 
   
 
+
+
+
   ngOnInit() {
 
-  const date = new Date();
+    const date = new Date();
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
   this.currentDate = date.toLocaleDateString('fr-FR', options);
 

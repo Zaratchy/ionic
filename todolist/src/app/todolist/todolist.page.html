@@ -19,6 +19,7 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let taskName of this.taskList, let i = index">
+      <ion-checkbox class="check {{ checkBox }}" (click)="taskDone()" [(ngModel)]="checked" data-md-icheck (change)="toggleVisibility($event)"></ion-checkbox>
       {{ taskName }}
       <ion-button color="danger" slot="end" clear (click)="deleteTask(i)">
         <ion-icon name="trash-outline"></ion-icon>
