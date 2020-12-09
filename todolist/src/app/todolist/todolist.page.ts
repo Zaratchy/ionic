@@ -6,14 +6,28 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './todolist.page.html',
   styleUrls: ['./todolist.page.scss'],
 })
+
 export class TodolistPage implements OnInit {
+
+  
+  currentDate: string;
+
 
   taskList = [];
   taskName = '';
 
   constructor(public alertCtrl: AlertController) { }
 
+  
+
   ngOnInit() {
+
+  const date = new Date();
+  const options = { weekday: 'long', month: 'long', day: 'numeric' };
+  this.currentDate = date.toLocaleDateString('fr-FR', options);
+
+
+
   }
 
   async showPrompt() {
@@ -53,4 +67,5 @@ export class TodolistPage implements OnInit {
     this.taskList.splice(index, 1);
   }
 }
+
 

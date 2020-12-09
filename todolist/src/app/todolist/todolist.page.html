@@ -4,9 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
+
+
+<ion-content>
+  <div class="bg-img">
+
+    <h1><b>Aujourd'hui</b></h1>
+    <h5>{{ currentDate }}</h5>
+    
+  </div>
+</ion-content>
+
+
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let taskName of taskList, let i = index">
+    <ion-item *ngFor="let taskName of this.taskList, let i = index">
       {{ taskName }}
       <ion-button color="danger" slot="end" clear (click)="deleteTask(i)">
         <ion-icon name="trash-outline"></ion-icon>
