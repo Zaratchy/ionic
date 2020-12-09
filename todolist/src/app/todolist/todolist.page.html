@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let taskName of this.taskList, let i = index">
+    <ion-item *ngFor="let taskName of taskList, let i = index">
       {{ taskName }}
       <ion-button color="danger" slot="end" clear (click)="deleteTask(i)">
         <ion-icon name="trash-outline"></ion-icon>

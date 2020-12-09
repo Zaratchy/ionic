@@ -8,6 +8,9 @@ import { AlertController } from '@ionic/angular';
 })
 export class TodolistPage implements OnInit {
 
+  taskList = [];
+  taskName = '';
+
   constructor(public alertCtrl: AlertController) { }
 
   ngOnInit() {
