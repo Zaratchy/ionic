@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ApiService } from '../api/api.service';
+import { People } from '../models/people';
 
 @Component({
   selector: 'app-todolist',
@@ -8,11 +10,12 @@ import { AlertController } from '@ionic/angular';
 })
 
 
-
-
 export class TodolistPage implements OnInit {
 
-  
+  peopleList: Array<People> = [];
+
+
+
   currentDate: string;
   
   
@@ -20,7 +23,7 @@ export class TodolistPage implements OnInit {
   taskList = [];
   taskName = '';
 
-  constructor(public alertCtrl: AlertController) { }
+  constructor(public alertCtrl: AlertController, private api: ApiService) { }
 
   
 
@@ -29,7 +32,11 @@ export class TodolistPage implements OnInit {
 
   ngOnInit() {
 
-    const date = new Date();
+  this.api.getAllPeople().subscribe(response => {
+    this.peopleList = response.json().results
+  })
+
+  const date = new Date();
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
   this.currentDate = date.toLocaleDateString('fr-FR', options);
 

@@ -25,13 +25,20 @@
         {{ taskName }}
       </ion-label>
 
-
+    
 
       <ion-button color="danger" slot="end" clear (click)="deleteTask(i)">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
+
+  <ion-item *ngFor="let people of this.peopleList">
+    {{ people.name }}
+
+  </ion-item>
+
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="showPrompt()" expand="block">
       <ion-icon name="add"></ion-icon>

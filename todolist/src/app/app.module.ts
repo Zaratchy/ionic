@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
+import { ApiService } from './api/api.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,13 +18,27 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ApiService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export interface People {
+  name: string,
+  height: string,
+  mass: string,
+  hair_color: string,
+  skin_color: string,
+  eye_color: string,
+  birth_year: string,
+  gender: string,
+  url: string;
+}
